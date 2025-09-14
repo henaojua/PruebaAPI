@@ -4,7 +4,7 @@ it('Crear un usuario', function(){
             url: 'https://petstore.swagger.io/v2/user/createWithList',
             method: 'POST',
             body: [ {
-               "id": 1,
+               "id": 0,
                 "username": "Henaojua",
                 "firstName": "Juan",
                 "lastName": "Henao",
@@ -25,7 +25,8 @@ it('Buscar el usuario creado', function(){
 
         cy.request({
         url:`https://petstore.swagger.io/v2/user/Henaojua`,
-        method: 'GET'
+        method: 'GET',
+        failOnStatusCode: false
     }).then(response =>{
         cy.log(JSON.stringify(response.body))
         expect(response.status).to.eq(200)
@@ -59,7 +60,8 @@ it('Buscar el usuario modificado', function(){
 
         cy.request({
         url:`https://petstore.swagger.io/v2/user/Henaojua`,
-        method: 'GET'
+        method: 'GET',
+        failOnStatusCode: false
     }).then(response =>{
         cy.log(JSON.stringify(response.body))
         expect(response.status).to.eq(200)
@@ -72,12 +74,11 @@ it('Buscar el usuario modificado', function(){
 it('Eliminar el usuario,' ,function(){
     cy.request({
         url:`https://petstore.swagger.io/v2/user/Henaojua`,
-        method: 'DELETE'
+        method: 'DELETE',
+        failOnStatusCode: false
     }).then(response =>{
         cy.log(JSON.stringify(response.body))
         expect(response.status).to.eq(200)
     })
 })
 
-
-Hola
