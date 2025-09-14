@@ -1,0 +1,5 @@
+Conclusiones del ejercicio:
+
+1. Para el método GET de obtener usuario la API se comporta de manera inestable, tras realizar 5 pruebas 4 de ellas fueron exitosas, donde si retornaba de manera correcta los datos del usuario creado, y en una de ellas falla porque no lo encuentra a pesar de que se informa que la creación fue exitosa. 
+2. para el método PUT hay una inconsistencia en la actualización dado que se actualizan los dos datos sugeridos en el Body del request y a pesar de que informa que fue exitoso, no retorna los datos actualizados.
+3. Metodos POST y DELETE sin novedades.
